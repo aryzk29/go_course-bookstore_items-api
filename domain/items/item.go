@@ -1,4 +1,4 @@
-package domain
+package items
 
 type Item struct {
 	Id                string      `json:"id"`
