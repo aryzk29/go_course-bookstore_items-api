@@ -8,7 +8,19 @@ import (
 	"net/http"
 )
 
-func Create(w http.ResponseWriter, r *http.Request) {
+type itemsControllerInterface interface {
+	Create(w http.ResponseWriter, r *http.Request)
+	Get(w http.ResponseWriter, r *http.Request)
+}
+
+var (
+	ItemsController itemsControllerInterface = &itemsController{}
+)
+
+type itemsController struct {
+}
+
+func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 	if err := oauth.AuthenticateRequest(r); err != nil {
 		return
 	}
@@ -23,4 +35,8 @@ func Create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Println(result)
+}
+
+func (c *itemsController) Get(w http.ResponseWriter, r *http.Request) {
+
 }
