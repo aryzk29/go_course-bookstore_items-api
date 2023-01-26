@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/aryzk29/bookstore-utils-go/rest_errors"
 	"github.com/aryzk29/go_course-bookstore_items-api/domain/items"
+	"github.com/federicoleon/bookstore_utils-go/rest_errors"
 	"net/http"
 )
 
